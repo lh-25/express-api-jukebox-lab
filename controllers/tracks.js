@@ -52,7 +52,7 @@ router.put('/:trackId', async (req, res) => {
       res.status(404)
       throw new Error("Track not found");
     } 
-    res.status(200).json(`${updatedTrack.title} has been updated!`)
+    res.status(200).json(updatedTrack.title)
   } catch (error) {
     if (res.status === 404) {
       res.json({error: error.message})
@@ -72,7 +72,7 @@ router.delete('/:trackId', async (req, res) => {
       throw new Error("Track not found");
       
     }
-    res.status(200).json(`${deleteTrack.title} has been deleted!`)
+    res.status(200).json(deleteTrack.title)
   } catch (error) {
     if (res.statusCode === 404) {
       res.json({error: error.message})
